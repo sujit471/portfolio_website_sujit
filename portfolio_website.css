@@ -1,0 +1,407 @@
+/* Global Styles */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+	background-color: rgb(0, 0, 33);
+	color: white;
+	font-family: "Poppins", sans-serif;
+}
+
+
+.left {
+	font-size: 2rem;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 80px;
+	background-color: rgb(5, 5, 75);
+
+
+}
+
+a {
+	color: white;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+a:hover {
+	color: purple;
+
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+.firstSection {
+	display: flex;
+	justify-content: space-around;
+	margin: 60px 0;
+}
+
+.leftSection {
+
+	font-size: 2.8rem;
+
+}
+
+.firstSection>div {
+	width: 30%;
+}
+
+/* > use of this  applies to only one */
+.rightSection {}
+
+.rightSection img {
+	width: 80%;
+	margin: 50px;
+}
+
+.color {
+	color: rgb(200, 130, 200);
+
+}
+
+#element {
+	color: rgb(232, 122, 232);
+}
+
+.SecondSection {
+	max-width: 80vw;
+	margin: auto;
+	height: 80vh;
+}
+
+main hr {
+	border: 0;
+	background: #9c97f1;
+	height: 1.2px;
+	margin: 40px 80px;
+}
+
+.SecondSection h1 {
+	font-size: 1.9rem;
+}
+
+.grey {
+	color: grey;
+	font-size: 25px;
+}
+
+/* .SecondSection .box{
+	height : 2px;
+	background-color: white;
+}
+.SecondSection .vertical{
+	background-color: white;
+	height : 40px;
+width : 1px;
+margin: 0 100px;
+
+} */
+#about {
+	padding: 80px 0;
+	color: #ababab;
+
+
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.about-col-1 {
+	flex-basis: 35%;
+}
+
+.about-col-1 img {
+	width: 60%;
+	border-radius: 15px;
+	margin-left: 40px;
+
+}
+
+.about-col-2 {
+	flex-basis: 60%;
+}
+
+.title {
+	display: flex;
+	margin: 20px 0 40px;
+
+}
+
+.design {
+	font-size: 60px;
+}
+
+.details {
+	margin-right: 70px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+
+.details::after {
+	content: '';
+	width: 0;
+	height: 3px;
+	background: #ff004f;
+	position: absolute;
+	left: 0;
+	bottom: -8px;
+	transition: 0.5s;
+}
+
+.details.active-link::after {
+	width: 50%;
+}
+
+.contents span {
+	color: rgb(228, 90, 90);
+}
+
+.contents ul li {
+	list-style: none;
+}
+
+.contents {
+	display: none;
+}
+
+.contents.active-tab {
+	display: block;
+}
+
+#services {
+	margin-left: 70px;
+	margin-top: 80px;
+}
+
+.services-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+	margin-top: 50px;
+
+}
+
+.services-list div {
+	background: #3b1111;
+	padding: 40px;
+	font-size: 14px;
+	font-weight: 300;
+	border-radius: 10px;
+	margin-right: 20px;
+	transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div:hover {
+	background: #ff004f;
+	transform: translateY(-10px);
+}
+
+#portfolio {
+	margin-left: 70px;
+	margin-top: 80px;
+}
+
+.design {
+	font-size: 30px;
+}
+
+.worklist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+	margin-top: 50px;
+}
+
+.work {
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.work img {
+	width: 70%;
+	border-radius: 10px;
+	display: block;
+	transition: transform 0.5s;
+}
+
+/* the layer is to postion  the text above the imagae 
+here height is 0% to hide  the text initially
+*/
+.layer {
+	width: 73.8%;
+	height: 00%;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+
+.layer h3 {
+	font-weight: 500;
+	margin-bottom: 20px;
+
+}
+
+.layer a {
+	margin-top: 20px;
+	color: #ff004f;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 60px;
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	text-align: center;
+
+}
+
+.work:hover img {
+	transform: scale(1.1);
+}
+
+.work:hover .layer {
+	height: 100%;
+}
+
+.btn {
+	margin-top: 30px;
+	background: #ff004f;
+	padding: 15px;
+	border-radius: 10px;
+	align-items: center;
+	display: block;
+
+}
+
+.btn {
+	display: block;
+	margin: 50px auto;
+	width: fit-content;
+	border: 1px solid #ff004f;
+}
+
+.btn:hover {
+	transition: transform 0.5s;
+}
+#contact{
+	margin-left: 70px;
+}
+.contact-left{
+	flex-basis: 35%;
+	
+}
+.contact-left i{
+	margin-right: 10px;
+	margin-top: 15px;
+	color:#fdf7f9;
+	font-size: 25px;
+	margin-bottom: 10px;
+	transition: transform 0.5s;
+}
+ .contact-right{
+	flex-basis: 60%;
+	margin-right: 30px;
+}
+.contact-left i:hover{
+	
+	color:#e17095;
+	transform: translateY(-5px);
+	
+}
+.btn.btn2{
+	display :inline-block;
+	background:#ff004f;
+}
+.contact-right form{
+width : 100%;
+}
+form input , form textarea{
+	width: 100%;
+	border: 0;
+	outline : none;
+	background: #262626;
+	padding: 15px;
+	margin : 15px 0;
+	color : #fff;
+	font-size: 18px;
+	border-radius: 6px;
+}
+form .btn2{
+	padding: 14px 60px;
+	font-size: 18px;
+	margin-top: 20px;
+	cursor:pointer;
+	/*cursor pointer bring the click hand of the mouse hover*/
+}
+.copyright{
+	width : 100%;
+	text-align: center;
+	padding: 15px 0;
+	background: #262626;
+	font-weight: 300;
+	margin-top: 20px;
+}
+.copyright i{
+	color :#ff004f;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+/* css  for managing for the small screen */
+.right i {
+	display: none;
+}
+@media only screen and (max-width:400px){
+ .right i{
+	display :block;
+ }
+ .design{
+	font-size: 300px;
+ }
+}
+#msg{
+	color: #61b752;
+ margin-top: -40px;
+ display :block;
+}

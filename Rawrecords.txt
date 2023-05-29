@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Producer Website</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="logo">Music Producer</div>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<h1>Welcome to Music Producer Website</h1>
+			<p>Here you can find the best music production services.</p>
+			<a href="#" class="btn">Learn More</a>
+		</section>
+
+		<section class="about">
+			<h2>About Us</h2>
+			<p>We are a team of experienced music producers that offer high-quality music production services for all types of artists.</p>
+			<a href="#" class="btn">Learn More</a>
+		</section>
+
+		<section class="services">
+			<h2>Our Services</h2>
+			<div class="services-container">
+				<div class="service">
+					<h3>Music Production</h3>
+					<p>We offer high-quality music production services for all genres.</p>
+				</div>
+				<div class="service">
+					<h3>Audio Engineering</h3>
+					<p>We provide professional audio engineering services to make your music sound great.</p>
+				</div>
+				<div class="service">
+					<h3>Mixing & Mastering</h3>
+					<p>We can mix and master your music to make it sound professional and radio-ready.</p>
+				</div>
+			</div>
+			<a href="#" class="btn">Learn More</a>
+		</section>
+
+		<section class="contact">
+			<h2>Contact Us</h2>
+			<form>
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<button type="submit">Send Message</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<p>Copyright &copy; Music Producer</p>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+>>>> Css codes 
+/* Global Styles */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+ul {
+	list-style: none;
+}
+
+/* Header Styles */
+
+header {
+	background-color: #222;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+	margin-right: auto;
+
+
+
+
+>>>> js codes 
+Add a click event listener to the "Learn More" buttons so that when a user clicks on them, an alert pops up with a message:
+// Get all the "Learn More" buttons
+const learnMoreButtons = document.querySelectorAll('.btn');
+
+// Add a click event listener to each button
+learnMoreButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    alert('Thanks for your interest! Contact us for more information.');
+  });
+});
+
+
+Add a form submission event listener so that when a user submits the contact form, an alert pops up with a message:
+// Get the contact form
+const contactForm = document.querySelector('form');
+
+// Add a submit event listener to the form
+contactForm.addEventListener('submit', event => {
+  event.preventDefault(); // prevent the form from submitting normally
+  alert('Thanks for contacting us! We will get back to you shortly.');
+});
+
+Add some animations to the website using the AOS (Animate On Scroll) library. First, download the AOS library and add it to your project. Then, add the following code to your JavaScript file:
+Add some animations to the website using the AOS (Animate On Scroll) library. First, download the AOS library and add it to your project. Then, add the following code to your JavaScript file:
+
+
+
+
+
+
+To add database functionality to the website, you'll need to use a server-side language like PHP, as well as a database management system like MySQL. Here's an example of how you could set up a simple contact form that stores submissions in a MySQL database:
+
+Create a MySQL database and table to store the contact form submissions. Here's an example SQL script to create the table:
+sql
+Copy code
+CREATE TABLE contact_submissions (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+Create a PHP file to handle form submissions and insert data into the database. Here's an example of what that file might look like:
+php
+Copy code
+<?php
+
+// Connect to the database
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database_name";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Check if the form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Get the form data
+  $name = mysqli_real_escape_string($conn, $_POST['name']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+  // Insert the data into the database
+  $sql = "INSERT INTO contact_submissions (name, email, message) VALUES ('$name', '$email', '$message')";
+
+  if (mysqli_query($conn, $sql)) {
+    echo "Thanks for contacting us! We will get back to you shortly.";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+}
+
+// Close the database connection
+mysqli_close($conn);
+
+?>
+This file checks if the form was submitted using the POST method, then inserts the form data into the database using the mysqli extension.
+
+Modify the contact form HTML code to include the PHP file as the form action and the method as "POST":
+javascript
+Copy code
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form action="submit.php" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+This code sets the form action to the PHP file you created in step 2 and sets the method to "POST".
+
+Note: Make sure to keep your database credentials and PHP files secure by not sharing them publicly, and using best practices for storing sensitive information.
+
+
+
+
+
